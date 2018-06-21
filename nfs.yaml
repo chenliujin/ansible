@@ -1,0 +1,33 @@
+- hosts: nfs-server 
+  tasks:
+    - name: 安装 nfs-utils, rpcbind
+      yum: state=latest name=nfs-utils,rpcbind
+
+    - name: 配置
+      copy: src=etc/exports dest=/etc/exports
+
+    - name: 开机启动 nfs
+      service: name=nfs enabled=yes
+
+    - name: 开机启动 rpcbind
+      service: name=rpcbind enabled=yes
+
+    - name: 重启 rpcbind 
+      service: name=rpcbind state=restarted
+
+    - name: 重启 nfs
+      service: name=nfs state=restarted
+
+- hosts: nfs-client
+  tasks:
+    - name: 安装 nfs-utils, rpcbind
+      yum: state=latest name=nfs-utils,rpcbind
+
+    - name: 开机启动 rpcbind
+      service: name=rpcbind enabled=yes
+
+    - name: 重启 rpcbind 
+      service: name=rpcbind state=restarted
+
+
+
