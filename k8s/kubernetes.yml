@@ -1,0 +1,14 @@
+- hosts: k8s-node 
+  remote_user: root
+  tasks:
+    - name: yum 源 
+      copy: src=./etc/yum.repos.d/kubernetes.repo dest=/etc/yum.repos.d/kubernetes.repo force=yes 
+
+    - name: 安装 kubeadm 
+      yum: name=kubeadm state=latest
+
+    - name: 开机启动
+      service: name=kubelet enabled=yes
+
+    - name: 启动服务 
+      service: name=kubelet state=restarted
