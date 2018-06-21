@@ -6,6 +6,9 @@
     - name: 配置
       copy: src=etc/exports dest=/etc/exports
 
+    - name: 文件夹权限
+      shell: mkdir -p /opt/mysql & chown nfsnobody:nfsnobody /opt/mysql
+
     - name: 开机启动 nfs
       service: name=nfs enabled=yes
 
