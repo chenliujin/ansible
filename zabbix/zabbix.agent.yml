@@ -1,29 +1,26 @@
 - hosts: zabbix 
   vars:
     hostname: '{{ ansible_hostname }}'
-    server_ip: '172.16.0.16'
-
+    server_ip: '127.0.0.1'
   tasks:
     - name: zabbix.repo 
       copy: src=./etc/yum.repos.d/zabbix.repo dest=/etc/yum.repos.d/zabbix.repo 
-
     - name: KEY 
       copy: src=./etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX-A14FE591 dest=/etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX-A14FE591
-
     - name: 安装 zabbix-agent
       yum : name=zabbix-agent state=latest 
-
     - name:  指定 server 端
       shell: sed -i 's/Server=127.0.0.1/Server={{ server_ip }}/g' /etc/zabbix/zabbix_agentd.conf
-
     - name:  指定 serveractive
       shell: sed -i 's/ServerActive=127.0.0.1/ServerActive={{ server_ip }}/g' /etc/zabbix/zabbix_agentd.conf
-
     - name:  修改 agent 主机名
       shell: sed -i 's/Hostname=Zabbix server/Hostname={{ hostname }}/g' /etc/zabbix/zabbix_agentd.conf
-
+    - name: 在zabbix-agent端定制监控磁盘io的配置文件
+      copy: src=./etc/zabbix/zabbix_agentd.d/ dest=/etc/zabbix/zabbix_agentd.d/  
     - name:  开机启动 
       shell: systemctl enable zabbix-agent
-
     - name:  开启服务
       shell: systemctl start  zabbix-agent
+    - name:  重启服务
+      shell: systemctl restart  zabbix-agent
+
