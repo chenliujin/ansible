@@ -1,0 +1,6 @@
+<configuration>
+    <property>
+        <name>mapred.job.tracker</name>
+        <value>http://cluster-master:9001</value>
+    </property>
+</configuration>

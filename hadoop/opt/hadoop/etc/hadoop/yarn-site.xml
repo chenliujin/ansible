@@ -1,0 +1,10 @@
+<configuration>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.address</name>
+        <value>cluster-master:18040</value>
+    </property>
+</configuration>
