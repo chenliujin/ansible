@@ -2,5 +2,5 @@
   export PATH=$JAVA_HOME/bin:$PATH
 
   export HADOOP_HOME=/opt/hadoop
-  export PATH=$HADOOP_HOME:$PATH
+  export PATH=$HADOOP_HOME/bin:$PATH
   
