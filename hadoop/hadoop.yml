@@ -14,6 +14,10 @@
     - name: .bashrc
       copy: src=./.bashrc dest=~/.bashrc
 
+    - name: source 
+      shell: source ~/.bashrc
+
+
 - hosts: cluster-master
   remote_user: root
   tasks:
