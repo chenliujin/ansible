@@ -8,9 +8,9 @@
 #    - name: source
 #      copy: src=./hadoop-3.0.3 dest=/opt/
 #
-#    - name: link 
-#      file: src=/opt/hadoop-3.0.3 dest=/opt/hadoop state=link 
-#
+    - name: link 
+      file: src=/opt/hadoop-2.7.6 dest=/opt/hadoop state=link 
+
     - name: conf
       copy: src=./opt/hadoop/etc/hadoop/ dest=/opt/hadoop/etc/hadoop/
 
