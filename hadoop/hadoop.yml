@@ -1,10 +1,10 @@
 
-- hosts: cluster
+- hosts: hadoop 
   remote_user: root
   tasks:
-#    - name: java
-#      yum: name=java-1.8.0-openjdk,java-1.8.0-openjdk-devel state=latest 
-#
+    - name: java
+      yum: name=java-1.8.0-openjdk,java-1.8.0-openjdk-devel state=latest 
+
 #    - name: source
 #      copy: src=./hadoop-3.0.3 dest=/opt/
 #
