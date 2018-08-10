@@ -1,5 +1,20 @@
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64
-export PATH=$JAVA_HOME/bin:$PATH
+# .bashrc
 
-export HADOOP_HOME=/opt/hadoop
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+alias ll='ls -alF'\n
+
+:>/etc/hosts
+cat >>/etc/hosts<<EOF
+127.0.0.1   localhost
+192.168.100.2  hadoop-master
+192.168.100.3  hadoop-slave1
+EOF
