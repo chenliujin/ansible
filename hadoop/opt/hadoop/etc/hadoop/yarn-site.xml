@@ -5,6 +5,6 @@
     </property>
     <property>
         <name>yarn.resourcemanager.address</name>
-        <value>cluster-master:18040</value>
+        <value>hadoop-master:18040</value>
     </property>
 </configuration>

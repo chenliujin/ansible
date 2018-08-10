@@ -2,20 +2,26 @@
 - hosts: hadoop 
   remote_user: root
   tasks:
-    - name: java
-      yum: name=java-1.8.0-openjdk,java-1.8.0-openjdk-devel state=latest 
+    #- name: java
+    #  yum: name=java-1.8.0-openjdk,java-1.8.0-openjdk-devel state=latest 
 
-#    - name: source
-#      copy: src=./hadoop-3.0.3 dest=/opt/
-#
+    - name: source
+      copy: src=/opt/hadoop-2.7.6.tar.gz dest=/opt/
+
+    - name: tar -xzvf
+      shell: tar -xzvf /opt/hadoop-2.7.6.tar.gz -C /opt/
+
     - name: link 
       file: src=/opt/hadoop-2.7.6 dest=/opt/hadoop state=link 
 
     - name: conf
       copy: src=./opt/hadoop/etc/hadoop/ dest=/opt/hadoop/etc/hadoop/
 
-    - name: .bashrc
-      copy: src=./.bashrc dest=~/.bashrc
+    - name: ENV 
+      copy: src=./etc/profile.d dest=/etc/
 
-    - name: source 
-      shell: source ~/.bashrc
+    - name: source ENV 
+      shell: source /etc/profile.d/*.sh
+
+    - name: hosts
+      copy: src=./.bashrc dest=~

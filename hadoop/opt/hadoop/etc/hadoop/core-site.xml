@@ -7,6 +7,6 @@
     <!-- file system properties -->
     <property>
         <name>fs.default.name</name>
-       <value>hdfs://cluster-master:9000</value>
+       <value>hdfs://hadoop-master:9000</value>
     </property>
 </configuration>

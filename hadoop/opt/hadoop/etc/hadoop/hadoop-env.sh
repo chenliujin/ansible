@@ -421,7 +421,7 @@ esac
 # For example, to limit who can execute the namenode command,
 # export HDFS_NAMENODE_USER=hdfs
 
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64
+export JAVA_HOME=/usr/lib/jvm/java
 export PATH=$JAVA_HOME/bin:$PATH
 
 export HADOOP_HOME=/opt/hadoop
