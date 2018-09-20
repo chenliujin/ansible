@@ -1,0 +1,16 @@
+$TTL 1D
+
+@ IN SOA chenliujin.com. root (
+  1 ; serial
+  1D ; refresh
+  1H ; retry
+  1W ; expire
+  3H ) ; minimu
+
+@   IN NS chenliujin.com.
+      IN A 172.20.10.6 
+h1    IN A 192.168.100.2
+h3    IN A 192.168.100.3 
+h4    IN A 192.168.100.4
+stock IN A 172.20.10.6
+mysql IN A 172.20.10.6
