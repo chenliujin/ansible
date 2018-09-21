@@ -1,0 +1,16 @@
+- hosts: dns 
+  tasks:
+    - name: 安装 bind
+      yum: name=bind state=latest
+
+    - name: 配置
+      copy: src=./etc/ dest=/etc/
+
+    - name: 配置
+      copy: src=./var/named/ dest=/var/named/
+
+    - name: 开机启动 
+      shell: systemctl enable named
+
+    - name: 启动 
+      shell: systemctl start named

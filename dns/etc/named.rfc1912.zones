@@ -40,3 +40,7 @@ zone "0.in-addr.arpa" IN {
 	allow-update { none; };
 };
 
+zone "chenliujin.com" IN {
+  type master; #类型：主域名
+  file "chenliujin.com.zone"; #路径：/var/named/chenliujin.com.zone
+};
