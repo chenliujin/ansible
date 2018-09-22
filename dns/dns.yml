@@ -14,3 +14,6 @@
 
     - name: 启动 
       shell: systemctl start named
+
+    - name: 重新启动 
+      shell: systemctl restart named
