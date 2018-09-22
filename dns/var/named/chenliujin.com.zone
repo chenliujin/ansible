@@ -16,3 +16,4 @@ ambari-h1       IN A 192.168.100.101
 ambari-h2       IN A 192.168.100.102
 ambari-h3       IN A 192.168.100.103
 stock           IN A 172.20.10.6
+mirrors         IN A 172.20.10.6
