@@ -11,10 +11,11 @@ $TTL 1D
       IN A 172.20.10.8 
 dns             IN A 192.168.100.2 
 ambari          IN A 192.168.100.99
-ambari-mysql    IN A 192.168.100.100 
+mysql           IN A 172.20.10.9 
+ambari-mysql    IN A 172.20.10.9 
 h1              IN A 192.168.100.101
 h2              IN A 192.168.100.102
 h3              IN A 172.20.10.11 
 www             IN A 172.20.10.8
 stock           IN A 172.20.10.8
-mirrors         IN A 172.20.10.8
+mirrors         IN A 172.20.10.9
