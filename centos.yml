@@ -1,0 +1,12 @@
+- hosts: h3.chenliujin.com
+  remote_user: root
+  tasks:
+    - name: epel-release
+      yum: name=epel-release state=latest
+
+    - name: vim 
+      yum: name=vim state=latest
+
+    - name: rsync
+      yum: name=rsync state=latest
+ 
