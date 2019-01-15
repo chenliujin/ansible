@@ -10,7 +10,7 @@ $TTL 1D
 @   IN NS chenliujin.com.
       IN A 172.20.10.8 
 dns             IN A 192.168.100.2 
-ambari          IN A 192.168.100.99
+ambari          IN A 172.20.10.9 
 mysql           IN A 172.20.10.9 
 ambari-mysql    IN A 172.20.10.9 
 h1              IN A 192.168.100.101
