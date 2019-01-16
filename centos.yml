@@ -1,4 +1,4 @@
-- hosts: h3.chenliujin.com
+- hosts: centos 
   remote_user: root
   tasks:
     - name: epel-release
@@ -9,4 +9,14 @@
 
     - name: rsync
       yum: name=rsync state=latest
- 
+
+    - name: 时间同步 ntp
+      yum: name=ntp state=latest
+
+    - name: 开机启动 ntp
+      shell: systemctl enable ntpd
+
+    - name: 重启 ntpd 
+      shell: systemctl restart ntpd
+
+
