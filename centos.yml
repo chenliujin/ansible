@@ -4,19 +4,15 @@
     - name: epel-release
       yum: name=epel-release state=latest
 
-    - name: vim 
-      yum: name=vim state=latest
-
-    - name: rsync
-      yum: name=rsync state=latest
-
-    - name: 时间同步 ntp
-      yum: name=ntp state=latest
+    - name: Yum Install
+      yum: name=net-tools,ntp,vim,screen,rsync,mysql-connector-java state=latest
 
     - name: 开机启动 ntp
       shell: systemctl enable ntpd
 
     - name: 重启 ntpd 
       shell: systemctl restart ntpd
+
+        
 
 
