@@ -7,6 +7,12 @@
     - name: Yum Install
       yum: name=net-tools,ntp,vim,screen,rsync,mysql-connector-java state=latest
 
+    - name: 关闭防火墙
+      shell: systemctl stop firewalld 
+
+    - name: 禁用防火墙
+      shell: systemctl disable firewalld 
+
     - name: 开机启动 ntp
       shell: systemctl enable ntpd
 
