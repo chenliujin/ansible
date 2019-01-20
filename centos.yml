@@ -7,6 +7,12 @@
     - name: Yum Install
       yum: name=net-tools,ntp,vim,screen,rsync,mysql-connector-java state=latest
 
+    - name: 关闭 SELinux
+      shell: setenforce 0 
+
+    - name: 关闭 SELinux
+      shell: sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config 
+
     - name: 关闭防火墙
       shell: systemctl stop firewalld 
 
